@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATI Gold Rush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Ngjyra e errët për sfond */
+            color: #f5f5f5; /* Ngjyra e bardhë për tekstin */
+            display: none; /* Fshih përmbajtjen fillimisht */
+        }
+        h1 {
+            margin: 10px 0; /* Margjina lart dhe poshtë titullit */
+            text-align: center;
+            font-size: 24px; /* Madhësia e titullit */
+            color: #FFD700; /* Ngjyra ari për titujt */
+            transition: color 0.3s; /* Efekti hover */
+        }
+        h1:hover {
+            color: #FFEA00; /* Ngjyrë më e lehtë kur kaloni me miun */
+        }
+        /* Konteineri i iframe-it */
+        #iframeContainer {
+            max-width: 1200px; /* Gjerësia maksimale */
+            margin: 20px auto; /* Centron iframe-in */
+            border-radius: 8px; /* Këndet e rrumbullakosura */
+            overflow: hidden; /* Mundëson rrumbullakosjen */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Hije për efekt 3D */
+            background-color: #2c2c2c; /* Ngjyra e errët për sfondin e iframe-it */
+            padding: 20px; /* Mbushja e brendshme */
+        }
+        iframe {
+            width: 100%;
+            border: none; /* Hiq kufirin */
+            border-radius: 4px; /* Këndet e rrumbullakosura për iframe */
+            transition: transform 0.3s; /* Efekti hover */
+        }
+        iframe:hover {
+            transform: scale(1.02); /* Zmadho iframe-in kur kaloni me miun */
+        }
+        /* Stilet për iframe-in e dashboard-it */
+        #dashboardIframe {
+            height: 192px; /* Lartësia për dashboard */
+            margin-top: 20px; /* Margjina për të krijuar hapësirë lart */
+        }
+        /* Stilet për iframe-in e TradingView */
+        #tradingViewIframe {
+            height: 500px; /* Lartësia për TradingView */
+            margin-top: 20px; /* Margjina për të krijuar hapësirë lart */
+        }
+        /* Stilet për iframe-in e kalendarit ekonomik */
+        #economicCalendarIframe {
+            height: 900px; /* Rritur lartësia për kalendarin ekonomik */
+            margin-top: 20px; /* Margjina për të krijuar hapësirë lart */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PATI Gold Rush</h1>
+
+    <div id="iframeContainer">
+        <!-- Iframe për dashboardin -->
+        <iframe id="dashboardIframe" src="https://invesery.com/dashboard/forex/cs"></iframe>
+
+        <!-- Iframe për TradingView -->
+        <iframe id="tradingViewIframe" src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_5ca01&symbol=TVC%3ADXY&interval=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=&theme=light&style=1&timezone=Etc%2FUTC&withdateranges=1&allow_symbol_change=1&hideideas=1&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=www.example.com&utm_medium=widget&utm_campaign=chart&utm_term=TVC%3ADXY"></iframe>
+
+        <!-- Iframe për kalendarin ekonomik -->
+        <iframe id="economicCalendarIframe" src="https://www.investing.com/economic-calendar/"></iframe>
+    </div>
+
+    <script>
+        // Fjalëkalimi që do të përdoret
+        const password = 'pati1'; // Fjalëkalimi i vendosur
+
+        // Merr fjalëkalimin nga përdoruesi
+        const userPassword = prompt("Ju lutemi jepni fjalëkalimin për të hyrë:");
+
+        // Kontrollo nëse fjalëkalimi është i saktë
+        if (userPassword === password) {
+            document.body.style.display = 'block'; // Trego përmbajtjen nëse fjalëkalimi është i saktë
+        } else {
+            alert("Fjalëkalimi është i gabuar!"); // Trego mesazh gabimi
+        }
+    </script>
+
+</body>
+</html>
